@@ -44,9 +44,10 @@ class LinearRegressionTest < Minitest::Test
     @line_finder.learn
   end
 
-  def test_it_workes_until_delta_is_small
+  def test_it_works_until_delta_is_small
     @line_finder.set_thetas(1,3)
-
-    assert_equal [0,2], @line_finder.learn_cycle
+    actual = @line_finder.learn_cycle
+    assert_in_delta 0, actual.first, 0.01
+    assert_in_delta 2, actual.last, 0.01
   end
 end
