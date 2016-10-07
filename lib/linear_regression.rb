@@ -5,10 +5,10 @@ class LinearRegression
   def initialize(data_path)
     @data = []
     CSV.foreach(data_path) do |row|
-      @data << row.map { |element| element.to_i }
+      @data << row.map { |element| element.to_f }
     end
     @learning_rate = 0.01
-    @threshold = 0.0001
+    @threshold = 0.001
   end
 
   def set_thetas(theta0, theta1)
@@ -27,7 +27,6 @@ class LinearRegression
   end
 
   def learn
-    # require 'pry';binding.pry
     old_theta0 = @theta0
     old_theta1 = @theta1
     update_theta0
@@ -51,7 +50,7 @@ class LinearRegression
     delta = learn
     while delta > @threshold
       delta = learn
-      p [@theta0, @theta1]
+      # p [@theta0, @theta1]
     end
     [@theta0,@theta1]
   end
