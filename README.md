@@ -1,5 +1,7 @@
 # Linear Regression
 
+This is a code-along project created for the Armstrong Possee at the Turing School. It explores the how to put Linear Regression into practice.
+
 This program will accept a CSV file path for a set of training data, and a pair of initial values for theta0 and theta1. The values of theta determine the hypothesis function, which is in the form h(x) = theta0 + theta1 * x.
 
  The "cost" method calculates the difference between the y-coordinate of the training data and the result of the hypothesis function for a given point.
