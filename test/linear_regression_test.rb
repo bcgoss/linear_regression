@@ -33,7 +33,7 @@ class LinearRegressionTest < Minitest::Test
     assert_equal 13, @line_finder.cost
   end
 
-  def test_learning_gradient_decnet
+  def test_learning_gradient_descent
     @line_finder.set_thetas(1,3)
 
     @line_finder.learn
@@ -47,7 +47,7 @@ class LinearRegressionTest < Minitest::Test
   def test_it_works_until_delta_is_small
     @line_finder.set_thetas(1,3)
     actual = @line_finder.learn_cycle
-    assert_in_delta 0, actual.first, 0.01
-    assert_in_delta 2, actual.last, 0.01
+    assert_in_delta 0.05, actual.first, 0.05
+    assert_in_delta 2, actual.last, 0.05
   end
 end

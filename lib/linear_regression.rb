@@ -7,7 +7,7 @@ class LinearRegression
     CSV.foreach(data_path) do |row|
       @data << row.map { |element| element.to_i }
     end
-    @learning_rate = 0.01
+    @learning_rate = 0.1
     @threshold = 0.0001
   end
 
@@ -51,7 +51,6 @@ class LinearRegression
     delta = learn
     while delta > @threshold
       delta = learn
-      p [@theta0, @theta1]
     end
     [@theta0,@theta1]
   end
